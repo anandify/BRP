@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankruptcy Detection Analysis - Prediction Result</title>
+    <style>
+        /* Styles for predict.html */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #fff;
+            background-color: #00aa00; /* Green color */
+            padding: 40px;
+            margin-top: 0;
+        }
+
+        .prediction {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #00aa00; /* Green color */
+        }
+
+        .result {
+            font-size: 30px;
+            background-color: #fff;
+            padding: 50px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        .not-bankrupt {
+            color: #00aa00; /* Green color */
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        .bankrupt {
+            color: #00aa00; /* Green color */
+            font-weight: bold;
+            font-size: 35px;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            color: #00aa00; /* Green color */
+            padding: 20px;
+            width: 100%;
+            text-decoration: underline;
+        }
+
+        .back-link::before {
+            content: " ←"; 
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bankruptcy Detection Analysis - Prediction Result</h1>
+
+    <!-- Sample prediction values -->
+    <!-- Replace the values with your actual prediction values if needed -->
+    <p class="not-bankrupt">Great News! The predicted value is: <span id="predictionValue">0</span></p>
+
+    <div class="result">
+        <p>The predicted bankruptcy status for the given attributes is: Not Bankrupt</p>
+    </div>
+
+    <a class="back-link" href="index.html">Go Back</a>
+</body>
+
+</html>

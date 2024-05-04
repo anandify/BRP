@@ -74,10 +74,26 @@
 <body>
     <h1>Bankruptcy Detection Analysis Website</h1>
     <p>The dataset is about bankruptcy prediction of Polish companies. The data was collected from Emerging Markets Information Service (EMIS), which is a database containing information on emerging markets around the world. The bankrupt companies were analysed in the period 2000-2012, while the still operating companies were evaluated from 2007 to 2013.</p>
-    <form action="predict.html">
+    <form id="predictionForm" onsubmit="return validateForm()">
         <h2>Enter attributes as a comma-separated string:</h2>
-        <input type="text" name="attributes" required><br><br>
+        <input type="text" name="attributes" placeholder="Model is offline; Use 0 or 1 to override" required><br><br>
         <input type="submit" value="Predict">
     </form>
+
+    <script>
+        function validateForm() {
+            var attributesInput = document.forms["predictionForm"]["attributes"].value.trim();
+            if (attributesInput === "0") {
+                window.location.href = "predict.html";
+                return false;
+            } else if (attributesInput === "1") {
+                window.location.href = "success.html";
+                return false;
+            } else {
+                alert("Please enter 0 or 1 to override.");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>

@@ -69,17 +69,15 @@
 <body>
     <h1>Bankruptcy Detection Analysis - Prediction Result</h1>
 
-    {% if prediction == 0 %}
-    <p class="not-bankrupt">Congratulations! You are not predicted to go bankrupt.</p>
-    {% else %}
-    <p class="bankrupt">Warning! The predicted value is: <span id="predictionValue">{{ prediction }}</span></p>
-    {% endif %}
+    <!-- Sample prediction values -->
+    <!-- Replace the values with your actual prediction values if needed -->
+    <p class="bankrupt">Warning! The predicted value is: <span id="predictionValue">1</span></p>
 
     <div class="result">
-        <p>The predicted bankruptcy status for the given attributes is: {{ prediction }}</p>
+        <p>The predicted bankruptcy status for the given attributes is: 1</p>
     </div>
 
-    <a class="back-link" href="templates/index.html">Go Back</a>
+    <a class="back-link" href="index.html">Go Back</a>
 </body>
 
 </html>

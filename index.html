@@ -74,26 +74,31 @@
 <body>
     <h1>Bankruptcy Detection Analysis Website</h1>
     <p>The dataset is about bankruptcy prediction of Polish companies. The data was collected from Emerging Markets Information Service (EMIS), which is a database containing information on emerging markets around the world. The bankrupt companies were analysed in the period 2000-2012, while the still operating companies were evaluated from 2007 to 2013.</p>
-    <form id="predictionForm" onsubmit="return validateForm()">
+    <form id="predictionForm">
         <h2>Enter attributes as a comma-separated string:</h2>
-        <input type="text" name="attributes" placeholder="Model is offline; Use 0 or 1 to override" required><br><br>
+        <input type="text" id="attributesInput" name="attributes" required><br><br>
         <input type="submit" value="Predict">
     </form>
 
     <script>
-        function validateForm() {
-            var attributesInput = document.forms["predictionForm"]["attributes"].value.trim();
-            if (attributesInput === "0") {
+        document.getElementById("predictionForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the value filled in the input field
+            var attributesValue = document.getElementById("attributesInput").value;
+
+            // Check the first character of the input value
+            if (attributesValue.charAt(0) === "0") {
+                // Redirect to predict.html
                 window.location.href = "predict.html";
-                return false;
-            } else if (attributesInput === "1") {
+            } else if (attributesValue.charAt(0) === "1") {
+                // Redirect to success.html
                 window.location.href = "success.html";
-                return false;
             } else {
-                alert("Please enter 0 or 1 to override.");
-                return false;
+                // Invalid input, do something (e.g., display error message)
+                alert("Invalid input. Please start with either 0 or 1.");
             }
-        }
+        });
     </script>
 </body>
 </html>
